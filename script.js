@@ -1,7 +1,6 @@
-// Smooth scroll
-const links = document.querySelectorAll('a[href^="#"]');
-links.forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
+// Smooth Scroll untuk link anchor
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function (e) {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
@@ -10,7 +9,7 @@ links.forEach(anchor => {
   });
 });
 
-// Header scroll effect
+// Scroll Effect untuk Header
 window.addEventListener('scroll', () => {
   const header = document.querySelector('header');
   if (window.scrollY > 100) {
@@ -22,8 +21,8 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Fade in saat scroll
-const observer = new IntersectionObserver((entries) => {
+// Fade-in Scroll Observer
+const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
@@ -33,21 +32,21 @@ const observer = new IntersectionObserver((entries) => {
   threshold: 0.1,
   rootMargin: '0px 0px -50px 0px'
 });
+
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-// Parallax Hero
+// Efek Parallax Hero
 window.addEventListener('scroll', () => {
   const scrolled = window.pageYOffset;
   const hero = document.querySelector('.hero');
   if (hero) {
-    hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+    hero.style.transform = `translateY(${scrolled * 0.2}px)`;
   }
 });
 
-// Hover Project Card
-const projectCards = document.querySelectorAll('.project-card');
-projectCards.forEach((card, index) => {
-  card.style.animationDelay = `${index * 0.2}s`;
+// Hover Animation pada Project Card
+document.querySelectorAll('.project-card').forEach((card, index) => {
+  card.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
   card.addEventListener('mouseenter', () => {
     card.style.transform = 'translateY(-15px) scale(1.02)';
   });
@@ -55,3 +54,17 @@ projectCards.forEach((card, index) => {
     card.style.transform = 'translateY(0) scale(1)';
   });
 });
+
+// Hover Animation pada Code Window
+const codeWindow = document.querySelector('.code-window');
+if (codeWindow) {
+  codeWindow.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+  codeWindow.addEventListener('mouseenter', () => {
+    codeWindow.style.transform = 'skewY(-1.5deg) skewX(1.5deg)';
+    codeWindow.style.boxShadow = '0 20px 50px rgba(0, 0, 0, 0.3)';
+  });
+  codeWindow.addEventListener('mouseleave', () => {
+    codeWindow.style.transform = 'none';
+    codeWindow.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.1)';
+  });
+}
