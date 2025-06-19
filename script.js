@@ -58,3 +58,29 @@ projectCards.forEach((card, index) => {
         card.style.transform = 'translateY(0) scale(1)';
     });
 });
+
+// Efek Tilt 3D untuk .code-window
+const codeWindows = document.querySelectorAll('.code-window');
+
+codeWindows.forEach(window => {
+    window.addEventListener('mousemove', (e) => {
+        const rect = window.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * 10;
+        const rotateY = ((x - centerX) / centerX) * -10;
+
+        window.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        window.style.transition = 'transform 0.1s ease';
+    });
+
+    window.addEventListener('mouseleave', () => {
+        window.style.transform = 'rotateX(0) rotateY(0)';
+        window.style.transition = 'transform 0.3s ease';
+    });
+});
+
