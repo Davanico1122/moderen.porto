@@ -248,7 +248,7 @@ section {
 }
 
 .code-window:hover {
-  transform: sKewY (-2deg) skewY (2deg)
+transform: skewY(-1.5deg) skewX(1.5deg);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
