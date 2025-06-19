@@ -153,6 +153,25 @@ nav {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
+/* Tombol Lihat Detail */
+.btn-detail {
+    padding: 0.7rem 1.5rem;
+    background: #764ba2;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-detail:hover {
+    background: #5b3a84;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
 /* Main Content */
 main {
     background: white;
