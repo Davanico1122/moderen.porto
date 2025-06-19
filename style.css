@@ -239,9 +239,9 @@ section {
 .code-window {
   background: #1a1a1a;
   border-radius: 10px;
-  padding: 1rem 1.2rem;
-  width: fit-content; /* ukuran otomatis mengikuti isi */
-  max-width: 100%;
+  padding: 1.2rem 1.5rem; /* Atas-bawah kecil, kiri-kanan agak lega */
+  width: auto;
+  display: inline-block; /* Supaya ramping sesuai isi */
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
