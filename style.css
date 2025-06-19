@@ -229,6 +229,8 @@ section {
   font-weight: 500;
 }
 
+/* ==== Code Window di Bagian Tentang ==== */
+
 .about-visual {
   display: flex;
   justify-content: center;
@@ -239,14 +241,17 @@ section {
   background: #1a1a1a;
   border-radius: 10px;
   padding: 1rem 1.2rem;
-  width: 380px;
+  width: 380px; /* Lebar tetap seperti gambar yang kamu mau */
   height: auto;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  transition: transform 0.1s ease, box-shadow 0.3s ease;
-  transform-style: preserve-3d;
-  perspective: 1000px;
-  will-change: transform;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.code-window:hover {
+transform: skewY(-1.5deg) skewX(1.5deg);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
 
 .code-header {
   display: flex;
@@ -273,9 +278,13 @@ section {
   word-break: break-word;
 }
 
+/* Syntax highlight */
 .code-keyword { color: #c678dd; }
 .code-string  { color: #98c379; }
 .code-function { color: #61dafb; }
+
+
+/* ==== Responsive ==== */
 
 @media (max-width: 768px) {
   .about-content {
@@ -293,6 +302,8 @@ section {
   }
 }
 
+
+/* Projects Section */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -320,6 +331,7 @@ section {
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
 }
+
 
 .project-content {
     padding: 1.5rem;
@@ -369,6 +381,7 @@ section {
     color: #764ba2;
 }
 
+/* Contact Section */
 .contact {
     background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
@@ -408,6 +421,7 @@ section {
     transform: translateY(-2px);
 }
 
+/* Footer */
 footer {
     background: #1a1a1a;
     color: white;
@@ -415,6 +429,7 @@ footer {
     padding: 2rem 0;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -443,6 +458,7 @@ footer {
     }
 }
 
+/* Scroll Animations */
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
