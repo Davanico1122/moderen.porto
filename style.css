@@ -239,9 +239,9 @@ section {
 
 .code-window {
   background: #1a1a1a;
-  border-radius: 10px;
-  padding: 1rem 1.2rem;
-  width: 380px;
+  border-radius: 12px;
+  padding: 0.8rem 1.2rem;
+  width: 360px;
   height: auto;
   display: inline-block;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
@@ -252,6 +252,7 @@ section {
   transform: scale(1.03);
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
 }
+
 
 .code-header {
   display: flex;
@@ -272,8 +273,8 @@ section {
 .code-content {
   color: #e1e1e1;
   font-family: 'Monaco', 'Consolas', monospace;
-  font-size: 0.9rem;
-  line-height: 1.5;
+  font-size: 0.85rem;
+  line-height: 1.4;
   white-space: pre-line;
 }
 
