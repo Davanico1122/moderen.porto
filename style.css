@@ -194,76 +194,87 @@ section {
     background-clip: text;
 }
 
-/* About Section */
+/* === About Section === */
 .about {
-    background: linear-gradient(135deg, #f8f9ff, #e8f2ff);
+  background: linear-gradient(135deg, #f8f9ff, #e8f2ff);
+  padding: 80px 0;
 }
 
 .about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
 }
 
 .about-text p {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-    color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #555;
 }
 
 .skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
 .skill-tag {
-    padding: 0.5rem 1rem;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    border-radius: 25px;
-    font-size: 0.9rem;
-    font-weight: 500;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .about-visual {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Code Window */
 .code-window {
-    background: #1a1a1a;
-    border-radius: 10px;
-    padding: 1rem;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Efek Hover (scale) */
+.code-window:hover {
+  transform: scale(1.05);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+}
+
+/* Header 3 Dot */
 .code-header {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .code-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
 }
 
 .code-dot:nth-child(1) { background: #ff5f57; }
 .code-dot:nth-child(2) { background: #ffbd2e; }
 .code-dot:nth-child(3) { background: #28ca42; }
 
+/* Code Content Styling */
 .code-content {
-    color: #e1e1e1;
-    font-family: 'Monaco', 'Consolas', monospace;
-    font-size: 0.9rem;
-    line-height: 1.5;
+  color: #e1e1e1;
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .code-keyword { color: #c678dd; }
