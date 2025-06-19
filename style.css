@@ -239,12 +239,13 @@ section {
 .code-window {
   background: #1a1a1a;
   border-radius: 10px;
-  padding: 1rem;
-  width: 100%;
-  max-width: 400px;
+  padding: 1rem 1.2rem;
+  width: fit-content; /* ukuran otomatis mengikuti isi */
+  max-width: 100%;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 /* Efek Hover (scale) */
 .code-window:hover {
