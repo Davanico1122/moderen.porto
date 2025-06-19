@@ -98,7 +98,12 @@ section{ padding:5rem 0; }
 .code-window{
   background:#1a1a1a; border-radius:10px; padding:1rem; width:100%; max-width:400px;
   box-shadow:0 20px 40px rgba(0,0,0,.1);
+
+  /* ---- efek scale ---- */
+  transition:transform .3s ease;
 }
+.code-window:hover{ transform:scale(1.03); }
+
 .code-header{ display:flex; gap:.5rem; margin-bottom:1rem; }
 .code-dot{ width:12px; height:12px; border-radius:50%; }
 .code-dot:nth-child(1){background:#ff5f57;} .code-dot:nth-child(2){background:#ffbd2e;}
@@ -136,11 +141,15 @@ section{ padding:5rem 0; }
   background:#f8f9ff; color:#667eea;
 }
 
-.project-links{ display:flex; gap:1rem; }
-.project-link{
-  text-decoration:none; font-weight:500; color:#667eea; transition:.3s;
+/* ------ tombol Detail Proyek ------ */
+.project-links{ margin-top:1rem; }
+.project-button{
+  display:inline-block; padding:.75rem 1.5rem;
+  background:#667eea; color:#fff; font-weight:600;
+  text-decoration:none; border-radius:30px; font-size:.95rem;
+  transition:background .3s ease, transform .3s ease;
 }
-.project-link:hover{ color:#764ba2; }
+.project-button:hover{ background:#556cd6; transform:translateY(-2px); }
 
 /* ========== Contact ========== */
 .contact{ background:linear-gradient(135deg,#667eea,#764ba2); color:#fff; }
