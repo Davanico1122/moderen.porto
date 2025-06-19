@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform E-Commerce Modern - Detail Proyek</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f8f9ff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .back-btn {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border: 2px solid #667eea;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .project-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6rem 0 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .project-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-icon {
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0 auto 2rem;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .project-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .project-hero .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Main Content */
+        main {
+            background: white;
+            margin-top: -2rem;
+            border-radius: 30px 30px 0 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content-section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Overview Section */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .overview-text {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .overview-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .project-stats {
+            background: linear-gradient(135deg, #f8f9ff, #e8f2ff);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid #e0e7ff;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e0e7ff;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .stat-value {
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        /* Technology Stack */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tech-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #f0f0f0;
+            transition: transform 0.3s ease;
+        }
+
+        .tech-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .tech-category h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            padding: 0.4rem 1rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Screenshots Section */
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .screenshot-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #f0f0f0;
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-card:hover {
+            transform: scale(1.02);
+        }
+
+        .screenshot-placeholder {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .screenshot-info {
+            padding: 1.5rem;
+        }
+
+        .screenshot-info h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .screenshot-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-primary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .project-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .overview-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .project-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Aria Kusuma</div>
+            <a href="index.html" class="back-btn">← Kembali ke Portfolio</a>
+        </nav>
+    </header>
+
+    <section class="project-hero">
+        <div class="container">
+            <div class="project-hero-content">
+                <div class="project-icon">E-Com</div>
+                <h1>Platform E-Commerce Modern</h1>
+                <p class="subtitle">Solusi lengkap untuk bisnis online dengan teknologi terdepan</p>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">Durasi Proyek</div>
+                        <div class="meta-value">6 Bulan</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Tim</div>
+                        <div class="meta-value">4 Developer</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Platform</div>
+                        <div class="meta-value">Web & Mobile</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="content-section">
+            <div class="container">
+                <div class="overview-grid">
+                    <div class="overview-content fade-in">
+                        <h2 class="section-title">Tentang Proyek</h2>
+                        <div class="overview-text">
+                            <p>
+                                Platform E-Commerce Modern adalah solusi komprehensif yang dirancang untuk 
+                                memenuhi kebutuhan bisnis online di era digital. Dengan teknologi terdepan 
+                                dan user experience yang optimal, platform ini memberikan pengalaman 
+                                berbelanja yang seamless bagi customer dan tools yang powerful untuk merchant.
+                            </p>
+                            <p>
+                                Proyek ini menggabungkan teknologi React untuk frontend yang responsive, 
+                                Node.js untuk backend yang scalable, dan MongoDB untuk database yang fleksibel. 
+                                Integrasi dengan Stripe memastikan proses pembayaran yang aman dan terpercaya.
+                            </p>
+                            <p>
+                                Platform ini telah berhasil melayani lebih dari 10,000 transaksi dengan 
+                                tingkat kepuasan customer mencapai 98% dan uptime 99.9%.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="project-stats fade-in">
+                        <h3 style="margin-bottom: 1.5rem; color: #333;">Statistik Proyek</h3>
+                        <div class="stat-item">
+                            <span class="stat-label">Total Users</span>
+                            <span class="stat-value">50,000+</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Transaksi</span>
+                            <span class="stat-value">10,000+</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Uptime</span>
+                            <span class="stat-value">99.9%</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Rating</span>
+                            <span class="stat-value">4.8/5.0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Load Time</span>
+                            <span class="stat-value">< 2s</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" style="background: #f8f9ff;">
+            <div class="container">
+                <h2 class="section-title fade-in">Teknologi yang Digunakan</h2>
+                <div class="tech-grid">
+                    <div class="tech-category fade-in">
+                        <h3>Frontend</h3>
+                        <div class="tech-list">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Redux</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">Sass</span>
+                        </div>
+                    </div>
+                    <div class="tech-category fade-in">
+                        <h3>Backend</h3>
+                        <div class="tech-list">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">JWT</span>
+                            <span class="tech-tag">Bcrypt</span>
+                        </div>
+                    </div>
+                    <div class="tech-category fade-in">
+                        <h3>Database</h3>
+                        <div class="tech-list">
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Mongoose</span>
+                            <span class="tech-tag">Redis</span>
+                        </div>
+                    </div>
+                    <div class="tech-category fade-in">
+                        <h3>Payment & Tools</h3>
+                        <div class="tech-list">
+                            <span class="tech-tag">Stripe</span>
+                            <span class="tech-tag">CloudFlare</span>
+                            <span class="tech-tag">AWS S3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title fade-in">Fitur Utama</h2>
+                <div class="features-grid">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">🛒</div>
+                        <h3>Shopping Cart Advanced</h3>
+                        <p>Keranjang belanja dengan fitur save for later, wishlist, dan auto-save yang memastikan customer tidak kehilangan produk pilihan mereka.</p>
+                    </div>
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">💳</div>
+                        <h3>Payment Gateway</h3>
+                        <p>Integrasi dengan multiple payment gateway termasuk Stripe, PayPal, dan bank transfer lokal untuk kemudahan transaksi.</p>
+                    </div>
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">👤</div>
+                        <h3>User Management</h3>
+                        <p>System manajemen user yang komprehensif dengan role-based access control untuk admin, merchant, dan customer.</p>
+                    </div>
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">📊</div>
+                        <h3>Analytics Dashboard</h3>
+                        <p>Dashboard analitik real-time untuk tracking sales, user behavior, inventory, dan performance metrics yang detail.</p>
+                    </div>
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">📱</div>
+                        <h3>Responsive Design</h3>
+                        <p>Design yang fully responsive dan mobile-first approach memastikan pengalaman optimal di semua device.</p>
+                    </div>
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Security</h3>
+                        <p>Implementasi security terbaik dengan encryption, secure authentication, dan protection terhadap common vulnerabilities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" style="background: #f8f9ff;">
+            <div class="container">
+                <h2 class="section-title fade-in">Screenshots</h2>
+                <div class="screenshots-grid">
+                    <div class="screenshot-card fade-in">
+                        <div class="screenshot-placeholder">Homepage</div>
+                        <div class="screenshot-info">
+                            <h3>Landing Page</h3>
+                            <p>Homepage dengan hero section yang menarik dan product showcase</p>
+                        </div>
+                    </div>
+                    <div class="screenshot-card fade-in">
+                        <div class="screenshot-placeholder">Products</div>
+                        <div class="screenshot-info">
+                            <h3>Product Catalog</h3>
+                            <p>Halaman produk dengan filtering, sorting, dan search yang advanced</p>
+                        </div>
+                    </div>
+                    <div class="screenshot-card fade-in">
+                        <div class="screenshot-placeholder">Checkout</div>
+                        <div class="screenshot-info">
+                            <h3>Checkout Process</h3>
+                            <p>Proses checkout yang streamlined dan user-friendly</p>
+                        </div>
+                    </div>
+                    <div class="screenshot-card fade-in">
+                        <div class="screenshot-placeholder">Dashboard</div>
+                        <div class="screenshot-info">
+                            <h3>Admin Dashboard</h3>
+                            <p>Dashboard admin dengan analytics dan management tools</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Tertarik dengan Proyek Ini?</h2>
+            <p style="font-size: 1.2rem; opacity: 0.9;">Mari diskusikan bagaimana kita bisa mengembangkan solusi serupa untuk bisnis Anda</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">Live Demo</a>
+                <a href="#" class="btn btn-secondary">GitHub Repository</a>
+                <a href="mailto:aria@example.com" class="btn btn-primary">Hubungi Saya</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
