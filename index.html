@@ -3,22 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Davanico Ady Nugoho - Web Developer</title>
+  <title>Davanico Ady Nugoho – Web Developer</title>
+
+  <!-- Styles & Script -->
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
 <body>
+
   <!-- ===== Header ===== -->
   <header>
     <nav class="container">
       <div class="logo">Davanico Ady Nugoho</div>
+
+      <!-- Daftar tautan (desktop + mobile slide) -->
       <ul class="nav-links" id="nav-links">
         <li><a href="#home">Beranda</a></li>
         <li><a href="#about">Tentang</a></li>
         <li><a href="#projects">Proyek</a></li>
         <li><a href="#contact">Kontak</a></li>
       </ul>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+
+      <!-- Tombol hamburger -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -30,41 +37,55 @@
   <section id="home" class="hero">
     <div class="container">
       <div class="hero-content">
-        <h1>Membangun Web<br>yang Menginspirasi</h1>
-        <p class="subtitle">Junior Web Developer</p>
-        <p class="description">
-          Saya sedang belajar dan membangun website dengan teknologi web modern. Web ini adalah langkah awal saya untuk terus berkembang. Yuk, lihat karya pertama saya!
+        <h1 class="fade-in">👋 Halo, Saya Davanico</h1>
+        <p class="subtitle fade-in">
+          Seorang <span class="highlight">Web Developer Pemula</span> yang Bersemangat
         </p>
-        <a href="#projects" class="cta-button">Lihat Karya Saya</a>
+        <p class="description fade-in">
+          Saya membangun website dengan semangat belajar dan teknologi modern.
+          Ini adalah langkah awal saya menuju dunia digital yang kreatif dan bermanfaat.
+        </p>
+        <a href="#projects" class="cta-button fade-in">💼 Lihat Proyek Saya</a>
       </div>
+    </div>
+
+    <!-- Gelombang SVG dekoratif -->
+    <div class="hero-bg">
+      <svg viewBox="0 0 1440 320">
+        <path fill="#ffffff" fill-opacity="0.1"
+          d="M0,192L60,165.3C120,139,240,85,360,80C480,75,600,117,720,144C840,171,960,181,1080,160C1200,139,1320,85,1380,58.7L1440,32V320H0Z">
+        </path>
+      </svg>
     </div>
   </section>
 
   <!-- ===== Main ===== -->
   <main>
+
     <!-- About -->
     <section id="about" class="about">
       <div class="container">
         <h2 class="section-title fade-in">Tentang Saya</h2>
+
         <div class="about-content">
           <div class="about-text fade-in">
             <p>
-              Sebagai web developer pemula, saya sedang belajar membangun solusi digital yang fungsional
-              dan menarik. Saya tertarik pada dunia pengembangan web dan terus berusaha mengasah kemampuan saya lewat berbagai proyek sederhana.
+              Saya web developer pemula yang senang mengeksplorasi teknologi modern
+              untuk membuat solusi digital sederhana namun bermanfaat.
             </p>
             <p>
-              Saya sedang belajar berbagai teknologi modern dan terus mencoba mengembangkan kemampuan saya.
-              Saat ini, saya fokus membuat proyek-proyek sederhana sebagai langkah awal untuk mewujudkan ide-ide kreatif dalam bentuk digital.
+              Proyek-proyek kecil ini adalah langkah awal saya mewujudkan ide kreatif
+              menjadi pengalaman web nyata.
             </p>
             <div class="skills">
               <span class="skill-tag">JavaScript</span>
               <span class="skill-tag">React</span>
               <span class="skill-tag">Node.js</span>
-              <span class="skill-tag">Python</span>
               <span class="skill-tag">CSS3</span>
               <span class="skill-tag">MongoDB</span>
             </div>
           </div>
+
           <div class="about-visual fade-in">
             <div class="code-window">
               <div class="code-header">
@@ -72,17 +93,15 @@
                 <div class="code-dot"></div>
                 <div class="code-dot"></div>
               </div>
-              <div class="code-content">
-<pre>
+              <div class="code-content"><pre><code>
 <span class="code-keyword">const</span> developer = {
-  <span class="code-string">name</span>: <span class="code-string">'Davanico Ady Nugoho'</span>,
-  <span class="code-string">passion</span>: <span class="code-string">'Web Development'</span>,
-  <span class="code-function">createAmazingThings</span>() {
-    <span class="code-keyword">return</span> <span class="code-string">'Beautiful Websites'</span>;
+  <span class="code-string">name</span>: <span class="code-string">'Davanico'</span>,
+  <span class="code-string">stack</span>: <span class="code-string">'Full-Stack (pemula)'</span>,
+  <span class="code-function">build</span>() {
+    <span class="code-keyword">return</span> <span class="code-string">'Website keren!'</span>;
   }
 };
-</pre>
-              </div>
+              </code></pre></div>
             </div>
           </div>
         </div>
@@ -93,22 +112,21 @@
     <section id="projects" class="projects">
       <div class="container">
         <h2 class="section-title fade-in">Proyek Terbaru</h2>
+
         <div class="projects-grid">
-          <!-- Project 1 -->
+
+          <!-- Project Card 1 -->
           <div class="project-card fade-in">
             <div class="project-image">
-              <img src="img/ecommerce-homepage.png" alt="Platform E-Commerce Modern" />
+              <img src="img/ecommerce-homepage.png" alt="Platform E-Commerce modern">
             </div>
             <div class="project-content">
-              <h3 class="project-title">Platform E-Commerce Modern</h3>
+              <h3 class="project-title">E-Commerce Modern</h3>
               <p class="project-description">
-                Platform e-commerce lengkap dengan sistem pembayaran terintegrasi,
-                dashboard admin, dan user experience optimal.
+                Platform belanja online dengan dashboard admin dan pembayaran terintegrasi.
               </p>
               <div class="project-tech">
                 <span class="tech-tag">React</span>
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">MongoDB</span>
                 <span class="tech-tag">Stripe</span>
               </div>
               <div class="project-links">
@@ -117,22 +135,19 @@
             </div>
           </div>
 
-          <!-- Project 2 -->
+          <!-- Project Card 2 -->
           <div class="project-card fade-in">
             <div class="project-image">
-              <img src="img/task-dashboard.png" alt="Aplikasi Manajemen Proyek" />
+              <img src="img/task-dashboard.png" alt="Manajemen Proyek">
             </div>
             <div class="project-content">
               <h3 class="project-title">Aplikasi Manajemen Proyek</h3>
               <p class="project-description">
-                Tool kolaborasi tim dengan fitur real-time chat, tracking progress,
-                dan dashboard analitik komprehensif.
+                Tool kolaborasi tim real-time dengan chat dan progress tracking.
               </p>
               <div class="project-tech">
                 <span class="tech-tag">Vue.js</span>
-                <span class="tech-tag">Express</span>
                 <span class="tech-tag">Socket.io</span>
-                <span class="tech-tag">PostgreSQL</span>
               </div>
               <div class="project-links">
                 <a href="project2.html" class="project-button">Detail Proyek</a>
@@ -140,28 +155,26 @@
             </div>
           </div>
 
-          <!-- Project 3 -->
+          <!-- Project Card 3 -->
           <div class="project-card fade-in">
             <div class="project-image">
-              <img src="img/learn-platform.png" alt="Platform Pembelajaran Online" />
+              <img src="img/learn-platform.png" alt="Platform Pembelajaran Online">
             </div>
             <div class="project-content">
               <h3 class="project-title">Platform Pembelajaran Online</h3>
               <p class="project-description">
-                LMS dengan fitur video streaming, kuis interaktif,
-                progress tracking, dan sertifikat digital.
+                LMS dengan video streaming, quiz interaktif, dan sertifikat digital.
               </p>
               <div class="project-tech">
                 <span class="tech-tag">Next.js</span>
-                <span class="tech-tag">Python</span>
                 <span class="tech-tag">Django</span>
-                <span class="tech-tag">Redis</span>
               </div>
               <div class="project-links">
                 <a href="project3.html" class="project-button">Detail Proyek</a>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -171,13 +184,10 @@
       <div class="container">
         <div class="contact-card">
           <h2 class="section-title">Mari Berkolaborasi</h2>
-          <p>
-            Siap mengembangkan proyek digital yang luar biasa?
-            Mari diskusikan ide Anda dan wujudkan bersama.
-          </p>
+          <p>Siap mengembangkan proyek digital? Diskusikan ide Anda bersama saya.</p>
           <div class="contact-links">
             <a href="mailto:davanico1122@gmail.com" class="contact-link">📧 Email</a>
-            <a href="https://www.linkedin.com/in/davanico-ady-nugroho-6a5884370/" class="contact-link">💼 LinkedIn</a>
+            <a href="https://linkedin.com/in/davanico-ady-nugroho-6a5884370/" class="contact-link">💼 LinkedIn</a>
             <a href="https://github.com/Davanico1122" class="contact-link">💻 GitHub</a>
           </div>
         </div>
@@ -188,7 +198,7 @@
   <!-- ===== Footer ===== -->
   <footer>
     <div class="container">
-      <p>&copy; 2025 Davanico Ady Nugoho. Dibuat dengan ❤️ untuk web yang lebih baik.</p>
+      <p>&copy; 2025 Davanico Ady Nugoho. Dibuat dengan ❤️</p>
     </div>
   </footer>
 </body>
