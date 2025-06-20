@@ -190,6 +190,7 @@ section{padding:5rem 0;}
   font-size: 2.5rem;
   color: #fff;
   margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Tambahkan ini */
 }
 
 .contact-card p {
