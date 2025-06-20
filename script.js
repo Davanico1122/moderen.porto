@@ -52,3 +52,14 @@ hamburger.addEventListener('click',()=>{
 mobileMenu.querySelectorAll('a').forEach(link=>{
   link.addEventListener('click',()=>mobileMenu.classList.remove('open'));
 });
+
+const burger   = document.getElementById('hamburger');
+const mobile   = document.getElementById('mobileMenu');
+
+burger.addEventListener('click', () => {
+  mobile.classList.toggle('open');
+});
+
+mobile.querySelectorAll('a').forEach(link =>
+  link.addEventListener('click', () => mobile.classList.remove('open'))
+);
