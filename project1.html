@@ -51,20 +51,28 @@
         }
 
         .back-btn {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border: 2px solid #667eea;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-        }
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border: 2px solid #667eea;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    outline: none;
+    box-shadow: none;
+}
 
-        .back-btn:hover {
-            background: #667eea;
-            color: white;
-            transform: translateY(-2px);
-        }
+.back-btn:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.back-btn:focus,
+.back-btn:active {
+    outline: none;
+    box-shadow: none;
+}
 
         /* Hero Section */
         .project-hero {
