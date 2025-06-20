@@ -88,9 +88,9 @@ nav {
 .nav-toggle .bar {
   width: 100%;
   height: 3px;
-  background: #333;
+  background: #2d3748; /* ← warna diganti dari putih ke gelap */
   border-radius: 2px;
-  transition: 0.3s;
+  transition: .3s;
 }
 
 /* ========== Hero Section ========== */
