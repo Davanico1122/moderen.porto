@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Manajemen Inventori - Detail Proyek</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f8f9ff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .back-btn {
+            color: #f5576c;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border: 2px solid #f5576c;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: #f5576c;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .project-hero {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 6rem 0 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .project-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-icon {
+            min-width: 160px;
+            min-height: 80px;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 auto 2rem;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            white-space: nowrap;
+        }
+
+        .project-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .project-hero .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Main Content */
+        main {
+            background: white;
+            margin-top: -2rem;
+            border-radius: 30px 30px 0 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content-section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Overview Section */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .overview-text {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .overview-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .project-stats {
+            background: linear-gradient(135deg, #fff0f8, #ffe8f0);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid #ffe0ee;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid #ffe0ee;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .stat-value {
+            font-weight: 600;
+            color: #f5576c;
+        }
+
+        /* Technology Stack */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tech-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #f0f0f0;
+            transition: transform 0.3s ease;
+        }
+
+        .tech-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .tech-category h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            padding: 0.4rem 1rem;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Screenshots Section */
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .screenshot-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #f0f0f0;
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-card:hover {
+            transform: scale(1.02);
+        }
+
+        .screenshot-placeholder {
+            height: 200px;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .screenshot-info {
+            padding: 1.5rem;
+        }
+
+        .screenshot-info h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .screenshot-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-primary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #f5576c;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .project-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .overview-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .project-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Davanico Ady Nugroho</div>
+            <a href="index.html" class="back-btn">← Kembali ke Portfolio</a>
+        </nav>
+    </header>
+
+    <section class="project-hero">
+        <div class="container">
+            <div class="project-hero-content">
+                <div class="project-icon">InvSys</div>
+                <h1>Sistem Manajemen Inventori</h1>
+                <p class="subtitle">Solusi komprehensif untuk mengelola inventori dengan efisiensi maksimal</p>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">Durasi Proyek</div>
+                        <div class="meta-value">4 Bulan</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Tim</div>
+                        <div class="meta-value">3 Developer</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Platform</div>
+                        <div class="meta-value">Web & Desktop</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="content-section">
+            <div class="container">
+                <div class="overview-grid">
+                    <div class="overview-content fade-in">
+                        <h2 class="section-title">Tentang Proyek</h2>
+                        <div class="overview-text">
+                            <p>
+                                Sistem Manajemen Inventori adalah aplikasi enterprise yang dirancang untuk 
+                                mengoptimalkan pengelolaan stok, tracking barang, dan automasi proses warehouse. 
+                                System ini memberikan visibilitas real-time terhadap pergerakan inventory dan 
+                                membantu perusahaan mengurangi waste serta meningkatkan efisiensi operasional.
+                            </p>
+                            <p>
+                                Dibangun dengan teknologi Laravel untuk backend yang robust, Vue.js untuk 
+                                interface yang interactive, dan MySQL untuk database yang reliable. 
+                                Sistem ini dilengkapi dengan barcode scanner integration dan automated 
+                                reorder notifications untuk memastikan stock selalu tersedia.
+                            </p>
+                            <p>
+                                Platform ini telah terbukti mengurangi stock-out hingga 85% dan meningkatkan 
+                                akurasi inventory tracking mencapai 99.5% di berbagai perusahaan manufacturing.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="project-stats fade-in">
+                        <h3 style="margin-bottom: 1.5rem; color: #333;">Statistik Proyek</h3>
+                        <div class="stat-item">
+                            <span class="stat-label">SKU Managed</span>
+                            <span class="stat-value">25,000+</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Warehouses</span>
+                            <span class="stat-value">15+</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Accuracy</span>
+                            <span class="stat-value">99.5%</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Cost Reduction</span>
+                            <span class="stat-value">30%</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Stock-out Reduction</span>
+                            <span class="stat-value">85%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" style="background: #f8f9ff;">
+            <div class="container">
+                <h2 class="section-title fade-in">Teknologi yang Digunakan</h2>
+                <div class="tech-grid">
+                    <div class="tech-category fade-in">
+                        <h3>Frontend</h3>
+                        <div class="tech-list">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Vuex</span>
+                            <span class="tech-tag">Quasar</span>
+                            <span class="tech-tag">Chart.js</span>
+                        </div>
+                    </div>
+                    <div class="tech-category fade-in">
+                        <h3>Backend</h3>
+                        <div class="tech-list">
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">PHP 8</span>
+                            <span class="tech-tag">Sanctum</span>
+                            <span class="tech-tag">Queue</span>
+                        </div>
+                    </div>
+                    <div class="tech-category fade-in">
+                        <h3>Database</h3>
+                        <div class="tech-list">
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Redis</span>
+                            <span class="tech-tag">Elasticsearch</span>
+                        </div>
+                    </div>
+                    <div class="tech-category fade-in">
+                        <h3>Integration & Tools</h3>
+                        <div class="tech-list">
+                            <span class="tech-tag">Barcode API</span>
+                            <span class="tech-tag">WhatsApp API</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title fade-in">Fitur Utama</h2>
+                <div class="features-grid">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">📦</div>
+                        <h3>Real-time Inventory Tracking</h3>
+                        <p>Monitoring stok secara real-time dengan update otomatis setiap ada pergerakan barang masuk atau keluar dari warehouse.</p>
+                    </div>
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">📊</div>
+                        <h3>Advanced Analytics</h3>
+                        <p>Dashboard analitik dengan insights mendalam tentang turnover rate, ABC analysis, dan forecasting demand untuk optimasi stok.</p>
+                    </div>
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">🔔</div>
+                        <h3>Automated Alerts</h3>
+                        <p>Sistem notifikasi otomatis untuk low stock, expired products, dan reorder points dengan integrasi WhatsApp dan email.</p>
+                    </div>
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">📱</div>
+                        <h3>Barcode Integration</h3>
+                        <p>Integrasi dengan barcode scanner untuk input data yang cepat dan akurat, mengurangi human error dalam pencatatan.</p>
+                    </div>
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">🏭</div>
+                        <h3>Multi-Warehouse</h3>
+                        <p>Manajemen multiple warehouse dengan transfer antar gudang, allocation tracking, dan centralized reporting.</p>
+             
