@@ -611,4 +611,80 @@
                     </div>
                     <div class="feature-card fade-in">
                         <div class="feature-icon">👥</div>
+                        <h3>Collaborative Learning</h3>
+                        <p>Fitur diskusi forum, group projects, peer review, dan real-time collaboration tools untuk meningkatkan interaksi antar siswa.</p>
+                    </div>
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">📱</div>
+                        <h3>Mobile Responsive</h3>
+                        <p>Akses seamless di semua device dengan progressive web app dan mobile app native untuk iOS dan Android.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" style="background: #f0f7ff;">
+            <div class="container">
+                <h2 class="section-title fade-in">Preview Platform</h2>
+                <div class="screenshots-grid">
+                    <div class="screenshot-card fade-in">
+                        <div class="screenshot-placeholder">Student Dashboard</div>
+                        <div class="screenshot-info">
+                            <h3>Student Dashboard</h3>
+                            <p>Interface intuitif untuk siswa dengan progress tracking, upcoming assignments, dan course recommendations.</p>
+                        </div>
+                    </div>
+                    <div class="screenshot-card fade-in">
+                        <div class="screenshot-placeholder">Course Builder</div>
+                        <div class="screenshot-info">
+                            <h3>Course Builder</h3>
+                            <p>Drag-and-drop course builder yang memudahkan instruktur membuat konten pembelajaran interaktif.</p>
+                        </div>
+                    </div>
+                    <div class="screenshot-card fade-in">
+                        <div class="screenshot-placeholder">Live Classroom</div>
+                        <div class="screenshot-info">
+                            <h3>Virtual Classroom</h3>
+                            <p>Ruang kelas virtual dengan video streaming, chat, whiteboard, dan screen sharing capabilities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Siap Merevolusi Pendidikan?</h2>
+            <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 2rem;">
+                Mari berkolaborasi untuk mengembangkan platform e-learning yang inovatif dan mengubah cara belajar siswa
+            </p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">Coba Demo</a>
+                <a href="#" class="btn btn-secondary">Diskusi Proyek</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
                   
