@@ -3,31 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Davanico Ady Nugoho – Web Developer</title>
-
-  <!-- CSS eksternal -->
+  <title>Davanico Ady Nugoho - Web Developer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- ===== Header ===== -->
   <header>
-    <nav class="container">
+    <nav class="container nav-container">
       <div class="logo">Davanico Ady Nugoho</div>
-
-      <!-- Tombol hamburger (hanya tampil di mobile) -->
-      <button class="nav-toggle" aria-label="Menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-
-      <!-- Daftar tautan -->
       <ul class="nav-links">
         <li><a href="#home">Beranda</a></li>
         <li><a href="#about">Tentang</a></li>
         <li><a href="#projects">Proyek</a></li>
         <li><a href="#contact">Kontak</a></li>
       </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="mobile-menu" id="mobileMenu">
+        <ul>
+          <li><a href="#home">Beranda</a></li>
+          <li><a href="#about">Tentang</a></li>
+          <li><a href="#projects">Proyek</a></li>
+          <li><a href="#contact">Kontak</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
@@ -38,8 +40,7 @@
         <h1>Membangun Web<br>yang Menginspirasi</h1>
         <p class="subtitle">Junior Web Developer</p>
         <p class="description">
-          Saya sedang belajar dan membangun website dengan teknologi web modern.
-          Web ini adalah langkah awal saya untuk terus berkembang. Yuk, lihat karya pertama saya!
+          Saya sedang belajar dan membangun website dengan teknologi web modern. Web ini adalah langkah awal saya untuk terus berkembang. Yuk, lihat karya pertama saya!
         </p>
         <a href="#projects" class="cta-button">Lihat Karya Saya</a>
       </div>
@@ -55,13 +56,12 @@
         <div class="about-content">
           <div class="about-text fade-in">
             <p>
-              Sebagai web developer pemula, saya sedang belajar membangun solusi digital
-              yang fungsional dan menarik. Saya tertarik pada dunia pengembangan web
-              dan terus berusaha mengasah kemampuan lewat berbagai proyek sederhana.
+              Sebagai web developer pemula, saya sedang belajar membangun solusi digital yang fungsional
+              dan menarik. Saya tertarik pada dunia pengembangan web dan terus berusaha mengasah kemampuan saya lewat berbagai proyek sederhana.
             </p>
             <p>
-              Saat ini saya fokus mempelajari teknologi modern dan membuat proyek-proyek kecil
-              sebagai langkah awal untuk mewujudkan ide-ide kreatif dalam bentuk digital.
+              Saya sedang belajar berbagai teknologi modern dan terus mencoba mengembangkan kemampuan saya.
+              Saat ini, saya fokus membuat proyek-proyek sederhana sebagai langkah awal untuk mewujudkan ide-ide kreatif dalam bentuk digital.
             </p>
             <div class="skills">
               <span class="skill-tag">JavaScript</span>
@@ -110,7 +110,7 @@
               <h3 class="project-title">Platform E-Commerce Modern</h3>
               <p class="project-description">
                 Platform e-commerce lengkap dengan sistem pembayaran terintegrasi,
-                dashboard admin, dan user-experience optimal.
+                dashboard admin, dan user experience optimal.
               </p>
               <div class="project-tech">
                 <span class="tech-tag">React</span>
@@ -199,7 +199,7 @@
     </div>
   </footer>
 
-  <!-- JS eksternal -->
+  <!-- ===== JavaScript ===== -->
   <script src="script.js"></script>
 </body>
-                  </html>
+</html>
