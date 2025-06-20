@@ -134,7 +134,6 @@ section{padding:5rem 0;}
 .code-function{color:#61dafb;}
 
 /* ========== Projects ========== */
-/* ========== Projects ========== */
 .projects-grid {
   display: grid;
   gap: 2rem;
@@ -160,7 +159,7 @@ section{padding:5rem 0;}
 
 .project-card:hover {
   /* Tanpa scale, hanya efek cahaya & kontras */
-  filter: brightness(1.03);
+  filter: brightness(1.00);
   box-shadow:
     0 16px 40px rgba(0, 0, 0, 0.15),
     0 12px 30px rgba(102, 126, 234, 0.1);
