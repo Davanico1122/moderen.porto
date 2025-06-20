@@ -103,7 +103,6 @@ section{padding:5rem 0;}
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-}
 .code-window:hover {
   transform: scale(1.03);
   box-shadow:
