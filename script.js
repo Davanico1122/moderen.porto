@@ -47,3 +47,21 @@ document.querySelectorAll('.project-card').forEach((card, i) => {
 
 /* ===== (Optional) Typing effect placeholder ===== */
 // Tambahkan logika di sini bila ingin efek mengetik pada code window.
+
+/* ===================================================
+   HAMBURGER MENU: toggle side-menu pada layar mobile
+   =================================================== */
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks  = document.querySelector('.nav-links');
+
+if (navToggle && navLinks) {
+  // buka/tutup saat tombol di-klik
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+
+  // otomatis tutup setelah salah-satu tautan di-klik
+  navLinks.querySelectorAll('a').forEach(link =>
+    link.addEventListener('click', () => navLinks.classList.remove('open'))
+  );
+}
