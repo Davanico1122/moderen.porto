@@ -611,4 +611,78 @@
                         <div class="feature-icon">🏭</div>
                         <h3>Multi-Warehouse</h3>
                         <p>Manajemen multiple warehouse dengan transfer antar gudang, allocation tracking, dan centralized reporting.</p>
+                </div>
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">📋</div>
+                        <h3>Audit Trail</h3>
+                        <p>Complete audit trail untuk semua transaksi inventory dengan user tracking dan timestamp untuk compliance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" style="background: #f8f9ff;">
+            <div class="container">
+                <h2 class="section-title fade-in">Preview Sistem</h2>
+                <div class="screenshots-grid">
+                    <div class="screenshot-card fade-in">
+                        <div class="screenshot-placeholder">Dashboard Overview</div>
+                        <div class="screenshot-info">
+                            <h3>Main Dashboard</h3>
+                            <p>Overview lengkap dengan key metrics, alerts, dan quick actions untuk manajemen harian.</p>
+                        </div>
+                    </div>
+                    <div class="screenshot-card fade-in">
+                        <div class="screenshot-placeholder">Inventory Management</div>
+                        <div class="screenshot-info">
+                            <h3>Inventory Management</h3>
+                            <p>Interface untuk mengelola stok dengan fitur search, filter, dan bulk operations.</p>
+                        </div>
+                    </div>
+                    <div class="screenshot-card fade-in">
+                        <div class="screenshot-placeholder">Analytics Report</div>
+                        <div class="screenshot-info">
+                            <h3>Analytics & Reports</h3>
+                            <p>Comprehensive reporting dengan visualisasi data dan export capabilities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Tertarik dengan Proyek Ini?</h2>
+            <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 2rem;">
+                Mari diskusikan bagaimana saya dapat membantu mengembangkan sistem serupa untuk kebutuhan bisnis Anda
+            </p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">Lihat Demo Live</a>
+                <a href="#" class="btn btn-secondary">Hubungi Saya</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
              
